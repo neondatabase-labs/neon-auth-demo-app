@@ -1,0 +1,23 @@
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "20"
+
+# Production context
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+# Development context (deploys from git branches)
+[context.branch-deploy]
+  environment = { NODE_ENV = "development" }
+
+# Preview context (deploy previews from pull/merge requests)
+[context.deploy-preview]
+  environment = { NODE_ENV = "development" }
+
+# Environment variables
+[template.environment]
+  NEXT_PUBLIC_STACK_PROJECT_ID = "Required: Your Stack Auth Project ID"
+  NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY = "Required: Your Stack Auth Publishable Client Key"
+  STACK_SECRET_SERVER_KEY = "Required: Your Stack Auth Secret Server Key"
+  DATABASE_URL = "Required: NeonDB owner role connection string"
+  DATABASE_AUTHENTICATED_URL = "Required: NeonDB authenticated role connection string"
