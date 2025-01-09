@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: neon-auth-stack-demo
+    runtime: node
+    plan: free
+    # Set NODE_ENV=development for build command since Render needs devDependencies to build Next.js (https://community.render.com/t/nextjs-deployment-fails-unless-devdependencies-moved-to-dependencies-in-package-json/26748)
+    buildCommand: NODE_ENV=development npm install && npm run build
+    startCommand: npm run start
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: DATABASE_URL
+        sync: false # Securely configure the database URL in Render Dashboard
+
+      - key: NEXT_PUBLIC_STACK_PROJECT_ID
+        sync: false # Configure your Stack Auth Project ID in Render Dashboard
+
+      - key: NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY
+        sync: false # Configure your Stack Auth Publishable Client Key in Render Dashboard
+
+      - key: STACK_SECRET_SERVER_KEY
+        sync: false # Securely configure your Stack Auth Secret Server Key in Render Dashboard

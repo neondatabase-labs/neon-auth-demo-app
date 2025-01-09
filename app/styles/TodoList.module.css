@@ -1,0 +1,26 @@
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+	.container {
+		max-width: 600px;
+	}
+}
+
+/* Small desktop */
+@media (min-width: 1024px) {
+	.container {
+		max-width: 800px;
+	}
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+	.container {
+		max-width: 1000px;
+	}
+}
