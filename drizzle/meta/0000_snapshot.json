@@ -1,5 +1,5 @@
 {
-  "id": "b6af261c-7cb3-49ee-b1c0-4d5e8c69c3c9",
+  "id": "5647fac4-22bd-4287-93de-b7070a45b252",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -25,11 +25,11 @@
             "cycle": false
           }
         },
-        "user_id": {
-          "name": "user_id",
+        "owner_id": {
+          "name": "owner_id",
           "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "task": {
           "name": "task",
@@ -53,56 +53,18 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "neon_identity.users_sync": {
-      "name": "users_sync",
-      "schema": "neon_identity",
-      "columns": {
-        "raw_json": {
-          "name": "raw_json",
-          "type": "jsonb",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "name": {
-          "name": "name",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "email": {
-          "name": "email",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "created_at": {
-          "name": "created_at",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "deleted_at": {
-          "name": "deleted_at",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": false
+      "foreignKeys": {
+        "todos_owner_id_users_sync_id_fk": {
+          "name": "todos_owner_id_users_sync_id_fk",
+          "tableFrom": "todos",
+          "tableTo": "users_sync",
+          "schemaTo": "neon_identity",
+          "columnsFrom": ["owner_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
-      "indexes": {},
-      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "policies": {},
@@ -111,9 +73,7 @@
     }
   },
   "enums": {},
-  "schemas": {
-    "neon_identity": "neon_identity"
-  },
+  "schemas": {},
   "sequences": {},
   "roles": {},
   "policies": {},

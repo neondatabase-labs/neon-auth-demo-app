@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import styles from "@/app/styles/Home.module.css";
 import { useStackApp, useUser } from "@stackframe/stack";
 
 export function Header() {

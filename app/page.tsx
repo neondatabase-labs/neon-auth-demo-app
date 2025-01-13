@@ -1,9 +1,10 @@
-import { AddTodoForm } from "@/app/add-todo";
-import { Header } from "@/app/header";
-import { TodoList } from "@/app/todo-list";
+import { AddTodoForm } from "app/add-todo";
+import { Header } from "app/header";
+import { TodoList } from "app/todo-list";
 
-import styles from "../styles/Home.module.css";
-import { stackServerApp } from "@/stack";
+import styles from "@/app/styles/Home.module.css";
+import { UsersStats } from "app/users-stats";
+import { stackServerApp } from "app/stack";
 
 export default async function Home() {
   const user = await stackServerApp.getUser();
@@ -16,6 +17,7 @@ export default async function Home() {
           <AddTodoForm />
           <TodoList />
         </div>
+        <UsersStats />
       </main>
     );
   }

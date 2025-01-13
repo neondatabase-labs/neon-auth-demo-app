@@ -1,6 +1,6 @@
 import { StackProvider, StackTheme } from "@stackframe/stack";
-import { stackServerApp } from "../stack";
-import "../styles/globals.css";
+import { stackServerApp } from "./stack";
+import "@/app/styles/globals.css";
 
 export default function RootLayout({
   children,

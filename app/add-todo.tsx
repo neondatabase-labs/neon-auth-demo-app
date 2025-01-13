@@ -1,6 +1,6 @@
 "use client";
 
-import { insertTodo } from "@/app/actions";
+import { insertTodo } from "app/actions";
 import { CSSProperties, useRef } from "react";
 import { useUser } from "@stackframe/stack";
 

@@ -1,29 +1,38 @@
 "use server";
 
-import { fetchWithDrizzle } from "@/app/db";
-import * as schema from "@/app/schema";
-import { Todo } from "@/app/schema";
-import { asc, eq, sql } from "drizzle-orm";
+import { fetchWithDrizzle } from "app/db";
+import { users } from "app/schema/neon_identity-schema";
+import * as schema from "app/schema/schema";
+import { asc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 export async function insertTodo(newTodo: { newTodo: string; userId: string }) {
-  await fetchWithDrizzle(async (db, { userId}) => {
+  await fetchWithDrizzle(async (db, { userId }) => {
     return db.insert(schema.todos).values({
       task: newTodo.newTodo,
       isComplete: false,
-      userId,
+      ownerId: userId,
     });
   });
 
   revalidatePath("/");
 }
 
-export async function getTodos(): Promise<Array<Todo>> {
-  return fetchWithDrizzle(async (db, { userId }) => {
+export async function getTodos() {
+  return fetchWithDrizzle(async (db) => {
     return db
-      .select()
+      .select({
+        id: schema.todos.id,
+        task: schema.todos.task,
+        isComplete: schema.todos.isComplete,
+        insertedAt: schema.todos.insertedAt,
+        owner: {
+          id: users.id,
+          email: users.email,
+        },
+      })
       .from(schema.todos)
-      .where(eq(schema.todos.userId, userId))
+      .innerJoin(users, eq(schema.todos.ownerId, users.id))
       .orderBy(asc(schema.todos.insertedAt));
   });
 }
