@@ -6,7 +6,7 @@ import * as schema from "app/schema/schema";
 import { asc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
-export async function insertTodo(newTodo: { newTodo: string; userId: string }) {
+export async function insertTodo(newTodo: { newTodo: string }) {
   await fetchWithDrizzle(async (db, { userId }) => {
     return db.insert(schema.todos).values({
       task: newTodo.newTodo,
@@ -32,7 +32,7 @@ export async function getTodos() {
         },
       })
       .from(schema.todos)
-      .innerJoin(users, eq(schema.todos.ownerId, users.id))
+      .leftJoin(users, eq(schema.todos.ownerId, users.id))
       .orderBy(asc(schema.todos.insertedAt));
   });
 }

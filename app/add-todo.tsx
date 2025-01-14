@@ -2,7 +2,6 @@
 
 import { insertTodo } from "app/actions";
 import { CSSProperties, useRef } from "react";
-import { useUser } from "@stackframe/stack";
 
 const styles = {
   form: {
@@ -32,7 +31,6 @@ const styles = {
 
 export function AddTodoForm() {
   const formRef = useRef<HTMLFormElement>(null);
-  const user = useUser();
 
   const onSubmit = async (formData: FormData) => {
     const newTodo = formData.get("newTodo");
@@ -45,11 +43,7 @@ export function AddTodoForm() {
       throw new Error("The newTodo must be a string");
     }
 
-    if (!user) {
-      throw new Error("No userId");
-    }
-
-    await insertTodo({ newTodo: newTodo.toString(), userId: user.id });
+    await insertTodo({ newTodo: newTodo.toString() });
     formRef.current?.reset();
   };
 

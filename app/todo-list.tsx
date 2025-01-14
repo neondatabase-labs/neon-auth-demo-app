@@ -141,12 +141,14 @@ export async function TodoList() {
           <ul style={{ listStyle: "none", padding: 0 }}>
             {todos.map((todo) => (
               <li key={todo.id} style={inlineStyles.todoItem}>
-                <div style={inlineStyles.ownerColumn}>
-                  <small style={inlineStyles.ownerLabel}>created by</small>
-                  <span style={inlineStyles.ownerEmail}>
-                    {todo.owner.email}
-                  </span>
-                </div>
+                {todo.owner?.email ? (
+                  <div style={inlineStyles.ownerColumn}>
+                    <small style={inlineStyles.ownerLabel}>created by</small>
+                    <span style={inlineStyles.ownerEmail}>
+                      {todo.owner.email}
+                    </span>
+                  </div>
+                ) : null}
                 <div style={inlineStyles.todoContent}>
                   <span
                     style={{

@@ -89,8 +89,8 @@ async function getUserStats() {
         ),
         total: db.$count(todos, eq(todos.ownerId, users.id)),
       })
-      .from(todos)
-      .innerJoin(users, eq(todos.ownerId, users.id))
+      .from(users)
+      .innerJoin(todos, eq(todos.ownerId, users.id))
       .where(isNull(users.deletedAt))
       .groupBy(users.email, users.name, users.id),
   );
@@ -100,6 +100,10 @@ async function getUserStats() {
 
 export async function UsersStats() {
   const stats = await getUserStats();
+
+  if (stats.length === 0) {
+    return null;
+  }
 
   return (
     <div style={styles.container}>

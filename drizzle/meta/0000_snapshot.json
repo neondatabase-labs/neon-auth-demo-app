@@ -1,5 +1,5 @@
 {
-  "id": "5647fac4-22bd-4287-93de-b7070a45b252",
+  "id": "d72f6ef1-922e-4384-b7f2-c516127096b0",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -29,7 +29,7 @@
           "name": "owner_id",
           "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "task": {
           "name": "task",
@@ -53,18 +53,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "todos_owner_id_users_sync_id_fk": {
-          "name": "todos_owner_id_users_sync_id_fk",
-          "tableFrom": "todos",
-          "tableTo": "users_sync",
-          "schemaTo": "neon_identity",
-          "columnsFrom": ["owner_id"],
-          "columnsTo": ["id"],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "policies": {},

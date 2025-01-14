@@ -6,7 +6,7 @@ export const todos = pgTable("todos", {
   id: bigint("id", { mode: "bigint" })
     .primaryKey()
     .generatedByDefaultAsIdentity(),
-  ownerId: text("owner_id").references(() => users.id),
+  ownerId: text("owner_id").notNull(),
   task: text("task").notNull(),
   isComplete: boolean("is_complete").notNull().default(false),
   insertedAt: timestamp("inserted_at", { withTimezone: true })
