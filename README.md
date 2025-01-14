@@ -11,8 +11,7 @@
 
 ## Prerequisites
 
-- [Neon](https://neon.tech) account with a new project
-- [Stack Auth](https://stack-auth.com/) account with a new project
+- [Neon](https://neon.tech) account
 - Node.js 18+ installed locally
 
 ## Local Development Setup
@@ -75,6 +74,8 @@
 
 6. Visit `http://localhost:3000` to see the application running.
 
+   ![Neon Identity Demo App](/images/neon-identity-todos-app.png)
+
 ## Important: Production Setup
 
 1. Upgrade your Stack Auth project to production mode by navigating to the project settings.
@@ -82,6 +83,7 @@
 
 ## Learn More
 
+- [Neon Identity Documentation](https://neon.tech/docs/guides/neon-identity)
 - [Stack Auth Documentation](https://docs.stack-auth.com/)
 
 ## Authors
