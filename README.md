@@ -17,15 +17,21 @@
 
 ## Local Development Setup
 
-### 1. Configure Stack Auth
+### 1. Set up Neon Identity
 
-1. Sign up for a [Stack Auth](https://stack-auth.com/) account and create a new project.
-2. Navigate to the project settings and create an API key.
+1. Create a new Neon project or use an existing one
+2. Navigate into Neon Identity
+3. Click "Connect" and go through the OAuth flow until your Neon Identity integration is set
+
+### 2. Get your Stack Auth keys
+
+1. Navigate to your Stack Auth [project dashboard](https://app.stack-auth.com/projects)
+2. Create a new API Key
 3. Upon creating the API key, you will receive `NEXT_PUBLIC_STACK_PROJECT_ID`, `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY` and `STACK_SECRET_SERVER_KEY`. Keep these handy for the next steps.
 
    ![Stack Auth API Key](/images/stack-auth-api-key.png)
 
-### 2. Local Installation
+### 3. Running the application
 
 1. Clone the repository:
 
@@ -43,6 +49,7 @@
 3. Create `.env` file with the following variables:
 
    ```env
+   # Stack Auth
    NEXT_PUBLIC_STACK_PROJECT_ID=
    NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY=
    STACK_SECRET_SERVER_KEY=
@@ -80,6 +87,7 @@
 ## Authors
 
 - [David Gomes](https://github.com/davidgomes)
+- [Pedro Figueiredo](https://github.com/pffigueiredo)
 
 ## Contributing
 
