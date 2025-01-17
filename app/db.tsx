@@ -15,7 +15,9 @@ export async function fetchWithDrizzle<T>(
     throw new Error("No userId");
   }
 
-  const db = drizzle(neon(process.env.DATABASE_URL!), { schema });
+  const db = drizzle(neon(process.env.DATABASE_URL!), {
+    schema,
+  });
 
   return callback(db, { userId: user.id });
 }
