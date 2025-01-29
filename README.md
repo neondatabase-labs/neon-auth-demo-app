@@ -25,10 +25,10 @@
 ### 2. Get your Stack Auth keys
 
 1. Navigate to your Stack Auth [project dashboard](https://app.stack-auth.com/projects)
-2. Create a new API Key
-3. Upon creating the API key, you will receive `NEXT_PUBLIC_STACK_PROJECT_ID`, `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY` and `STACK_SECRET_SERVER_KEY`. Keep these handy for the next steps.
+2. You should have received your API keys automatically when creating your project. If you don't have them, go to API Keys under Configuration and create new ones there.
+3. You'll need three keys for this demo: `NEXT_PUBLIC_STACK_PROJECT_ID`, `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY` and `STACK_SECRET_SERVER_KEY`. Keep these handy for the next steps.
 
-   ![Stack Auth API Key](/images/stack-auth-api-key.png)
+![Stack Auth API Key](/images/stack-auth-api-key.png)
 
 ### 3. Running the application
 
