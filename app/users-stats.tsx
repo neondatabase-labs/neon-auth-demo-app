@@ -1,8 +1,8 @@
 "use server";
 
-import { users } from "@/app/schema/neon_identity-schema";
+import { usersSync as users } from "drizzle-orm/neon";
 import { todos } from "./schema/schema";
-import { and, eq, isNull, sql } from "drizzle-orm";
+import { and, eq, isNull } from "drizzle-orm";
 import { CSSProperties } from "react";
 import { fetchWithDrizzle } from "app/db";
 

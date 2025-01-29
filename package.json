@@ -20,7 +20,7 @@
     "@types/react-syntax-highlighter": "^15.5.11",
     "autoprefixer": "^10.4.16",
     "clsx": "^2.1.1",
-    "drizzle-orm": "^0.38.2",
+    "drizzle-orm": "^0.39.0",
     "mysql2": "^3.11.3",
     "next": "^14.2.3",
     "postcss": "^8.4.33",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "bun-types": "^1.1.29",
     "dotenv": "^16.4.5",
-    "drizzle-kit": "^0.30.1",
+    "drizzle-kit": "^0.30.3",
     "eslint-config-next": "14.2.15",
     "postgres": "^3.4.4"
   },

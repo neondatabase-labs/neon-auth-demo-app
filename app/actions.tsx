@@ -1,7 +1,7 @@
 "use server";
 
 import { fetchWithDrizzle } from "app/db";
-import { users } from "app/schema/neon_identity-schema";
+import { usersSync as users } from "drizzle-orm/neon";
 import * as schema from "app/schema/schema";
 import { asc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
