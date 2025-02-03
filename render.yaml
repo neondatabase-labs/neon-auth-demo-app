@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: neon-identity-stack-demo
+    name: neon-auth-stack-demo
     runtime: node
     plan: free
     # Set NODE_ENV=development for build command since Render needs devDependencies to build Next.js (https://community.render.com/t/nextjs-deployment-fails-unless-devdependencies-moved-to-dependencies-in-package-json/26748)

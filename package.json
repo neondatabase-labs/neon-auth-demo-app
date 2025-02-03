@@ -1,5 +1,5 @@
 {
-  "name": "neon-identity-demo-app",
+  "name": "neon-auth-demo-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {

@@ -1,6 +1,6 @@
 <img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
 
-# Neon Identity Demo App
+# Neon Auth Demo App
 
 ## Features
 
@@ -16,11 +16,11 @@
 
 ## Local Development Setup
 
-### 1. Set up Neon Identity
+### 1. Set up Neon Auth
 
 1. Create a new Neon project or use an existing one
-2. Navigate into Neon Identity
-3. Click "Connect" and go through the OAuth flow until your Neon Identity integration is set
+2. Navigate into Neon Auth
+3. Click "Connect" and go through the OAuth flow until your Neon Auth integration is set
 
 ### 2. Get your Stack Auth keys
 
@@ -35,8 +35,8 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/neondatabase-labs/neon-identity-demo-app.git
-   cd neon-identity-demo-app
+   git clone https://github.com/neondatabase-labs/neon-auth-demo-app.git
+   cd neon-auth-demo-app
    ```
 
 2. Install dependencies:
@@ -74,7 +74,7 @@
 
 6. Visit `http://localhost:3000` to see the application running.
 
-   ![Neon Identity Demo App](/images/neon-identity-todos-app.png)
+   ![Neon Auth Demo App](/images/neon-auth-todos-app.png)
 
 ## Important: Production Setup
 
@@ -83,7 +83,7 @@
 
 ## Learn More
 
-- [Neon Identity Documentation](https://neon.tech/docs/guides/neon-identity)
+- [Neon Auth Documentation](https://neon.tech/docs/guides/neon-auth)
 - [Stack Auth Documentation](https://docs.stack-auth.com/)
 
 ## Authors
