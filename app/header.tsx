@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "@/app/styles/Home.module.css";
-import { useStackApp, useUser } from "@stackframe/stack";
+import { useStackApp, useUser } from "@stackframe/neon-next";
 
 export function Header() {
   const user = useUser();

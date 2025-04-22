@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
-    "@stackframe/stack": "^2.6.8",
+    "@stackframe/stack": "file:../stack/packages/stack/stackframe-stack-2.8.6.tgz",
+    "@stackframe/neon-next": "file:../stack/packages/neon-next/stackframe-neon-next-2.8.6.tgz",
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
