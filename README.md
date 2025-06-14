@@ -1,89 +1,73 @@
-<img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
+<img width="250px" src="https://neon.com/brand/neon-logo-dark-color.svg" />
 
 # Neon Auth Demo App
 
 ## Features
 
 - Next.js application with TypeScript
-- User authentication powered by Stack Auth
+- User authentication powered by Neon Auth
 - Database migrations with Drizzle ORM
 - Ready-to-deploy configuration for Vercel, Netlify, and Render
 
 ## Prerequisites
 
-- [Neon](https://neon.tech) account
+- [Neon](https://neon.com) account
 - Node.js 18+ installed locally
 
 ## Local Development Setup
 
-### 1. Set up Neon Auth
+### Clone this repository
 
-1. Create a new Neon project or use an existing one
-2. Navigate into Neon Auth
-3. Click "Connect" and go through the OAuth flow until your Neon Auth integration is set
+Clone this demonstration application and install the dependencies:
 
-### 2. Get your Stack Auth keys
+```bash
+git clone https://github.com/neondatabase-labs/neon-auth-demo-app.git
 
-1. Navigate to your Stack Auth [project dashboard](https://app.stack-auth.com/projects)
-2. You should have received your API keys automatically when creating your project. If you don't have them, go to API Keys under Configuration and create new ones there.
-3. You'll need three keys for this demo: `NEXT_PUBLIC_STACK_PROJECT_ID`, `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY` and `STACK_SECRET_SERVER_KEY`. Keep these handy for the next steps.
+cd neon-auth-demo-app
+npm install
+```
 
-![Stack Auth API Key](/images/stack-auth-api-key.png)
+### Set up Neon Auth
 
-### 3. Running the application
+1. Create or open a [Neon project](https://console.neon.tech/app/projects)
+2. Go to **Neon Auth** → **Setup instructions**
+3. Click **Set up Auth** to generate your configuration
+4. Copy these environment variables to `.env.local`:
+   - `NEXT_PUBLIC_STACK_PROJECT_ID`
+   - `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY`
+   - `STACK_SECRET_SERVER_KEY`
+   - `DATABASE_URL`
 
-1. Clone the repository:
+![Screenshot of Neon Auth API keys in the console](/images/neon-auth-api-keys.png)
 
-   ```bash
-   git clone https://github.com/neondatabase-labs/neon-auth-demo-app.git
-   cd neon-auth-demo-app
-   ```
+### Set up and run the application
 
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Create `.env` file with the following variables:
-
-   ```env
-   # Stack Auth
-   NEXT_PUBLIC_STACK_PROJECT_ID=
-   NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY=
-   STACK_SECRET_SERVER_KEY=
-
-   # Database connections
-   DATABASE_URL=              # neondb_owner role connection
-   ```
-
-   > Get your Stack Auth keys from your Stack Auth project dashboard.
-
-4. Set up the database:
+1. Set up the database:
 
    ```bash
-   npm run drizzle:generate  # Generate migrations
-   npm run drizzle:migrate  # Apply migrations
+   npm run drizzle:generate  # Generates migrations
+   npm run drizzle:migrate   # Applies migrations
    ```
 
-5. Start the development server:
+2. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-6. Visit `http://localhost:3000` to see the application running.
+3. Visit `http://localhost:3000` to see the application running (check your console for the actual port if 3000 is in use).
 
-   ![Neon Auth Demo App](/images/neon-auth-todos-app.png)
+   ![Screenshot of the Neon Auth demo application showing the todos interface](/images/neon-auth-todos-app.png)
 
-## Important: Production Setup
+## Production Setup (Important)
 
-1. Upgrade your Stack Auth project to production mode by navigating to the project settings.
-   ![Stack Auth Production Mode](/images/stack-auth-production-mode.png)
+Configure production settings in the Neon Console's Auth Configuration tab, such as domain restrictions.
+
+   ![Screenshot of Neon Auth configuration settings](/images/neon-auth-production-config.png)
 
 ## Learn More
 
-- [Neon Auth Documentation](https://neon.tech/docs/guides/neon-auth)
+- [Neon Auth Documentation](https://neon.com/docs/guides/neon-auth)
 - [Stack Auth Documentation](https://docs.stack-auth.com/)
 
 ## Authors
